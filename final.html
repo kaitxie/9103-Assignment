@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="final.css" />
+    <title>Final Project 9103</title>
+  </head>
+  <body>
+    <div class="parallax_container">
+      <img src="bg_1.png" alt="parallax" />
+      <img id="bg-2" src="bg_2.png" alt="parallax" />
+      <img id="bg-3" src="bg_3.png" alt="parallax" />
+      <h1 id="title">GameName</h1>
+    </div>
+    <section class="about">
+      <div class="image_gallary">
+        <div class="image_card" id="image_card-1">
+          <img src="1.jpg" alt="grid" />
+        </div>
+        <div class="image_card" id="image_card-2">
+          <img src="2.jpg" alt="grid" />
+        </div>
+        <div class="image_card" id="image_card-3">
+          <img src="3.jpg" alt="grid" />
+        </div>
+        <div class="image_card" id="image_card-4">
+          <img src="4.jpg" alt="grid" />
+        </div>
+      </div>
+      <div class="details">
+        Game Explanation
+        Earth is a magical place, and nature always show us the unexpected 
+        beauty. When work or life wears you down, let's start a journey. 
+        Feel the beauty of the world with your eyes, and experience different 
+        cultural backgrounds with your heart. Go eat different delicacies, 
+        harvest good mood and memories.
+      </div>
+      <div class="explore_btn">
+        <button class="explore">Explore</button>
+      </div>
+    </section>
+
+    <script>
+      var title = document.getElementById("title");
+      var bg_2 = document.getElementById("bg-2");
+      var bg_3 = document.getElementById("bg-3");
+
+      var image_card_1 = document.getElementById("image_card-1");
+      var image_card_2 = document.getElementById("image_card-2");
+      var image_card_3 = document.getElementById("image_card-3");
+      var image_card_4 = document.getElementById("image_card-4");
+
+      document.addEventListener("scroll", (event) => {
+        var positionY = window.scrollY;
+
+        title.style.fontSize = `${100 + positionY * 0.5}px`;
+
+        bg_2.style.top = `-${positionY * 0.5}px`;
+        bg_3.style.top = `-${positionY}px`;
+        bg_3.style.scale = 1 + positionY * 0.001;
+
+        image_card_1.style.transform = `translateY(${
+          positionY * -0.5 + 400
+        }px)`;
+
+        image_card_2.style.transform = `translateY(${positionY * 0.1 + -50}px)`;
+
+        image_card_3.style.transform = `translateY(${
+          positionY * -0.1 + 100
+        }px)`;
+
+        image_card_4.style.transform = `translateY(${
+          positionY * 0.2 + -125
+        }px)`;
+
+        var _newOpacity = positionY * 0.001;
+        if (_newOpacity >= 0 && _newOpacity <= 1) {
+          image_card_1.style.opacity = _newOpacity;
+          image_card_2.style.opacity = _newOpacity;
+          image_card_3.style.opacity = _newOpacity;
+          image_card_4.style.opacity = _newOpacity;
+        }
+      });
+    </script>
+  </body>
+</html>
