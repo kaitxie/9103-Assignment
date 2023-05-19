@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>IDEA9103 Assignment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assignment.css" />
+    <style>
+        h1 {text-align: center;}
+        .button {
+            display: inline-block;
+            padding: 10px 15px;
+            font-size: 20px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+            width: 100%;
+        }
+        
+        .button:hover {background-color: #3e8e41}
+        
+        .button:active {
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <div class="game_button1">
+            <button class="button" id="button1">Generate</button>
+        </div>
+        <div class="game_button2">
+            <button class="button" id="button2">Start</button>
+        </div>
+        <div class="game_button3">
+            <button class="button" id="button3">Stop</button>
+        </div>
+        <div class="game_instruction">
+            <article class="project">
+                <h2>Project Explanation</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vel
+                  urna luctus, mollis ante placerat, accumsan metus. Donec lorem ante,
+                  cursus vel lorem consequat, varius mollis eros. Sed ex erat, interdum
+                  ac euismod vitae, molestie id lorem. Proin tempor fermentum leo quis
+                  sollicitudin. Mauris elit ligula, fermentum in enim a, aliquet sodales
+                  odio.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vel
+                  urna luctus, mollis ante placerat, accumsan metus. Donec lorem ante,
+                  cursus vel lorem consequat, varius mollis eros. Sed ex erat, interdum
+                  ac euismod vitae, molestie id lorem. Proin tempor fermentum leo quis
+                  sollicitudin. Mauris elit ligula, fermentum in enim a, aliquet sodales
+                  odio.
+                </p>
+                <p style="color: #f857d8; font-size: 13px;">
+                  Tap on the grid to start / stop the background music.
+                </p>
+              </article>
+              <img
+                class="img-project"
+                src="instruction.png"
+                alt="project-pic"
+              />
+        </div>
+        <div class="game_name">
+            <h1>Project Name</h1>
+        </div>
+    </div>
+    <script src="assignment.js" ></script>
+    <script src="p5.js"></script>
+    <script src="p5.sound.js"></script>
+  </body>
+</html>
+
+
