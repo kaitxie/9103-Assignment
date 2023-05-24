@@ -127,6 +127,7 @@ function buttonChange() {
 button1.addEventListener("click", function(e) {
     click.play();
     randomArr();
+    loop();
 } );
 
 button2.addEventListener("click", function(e) {
