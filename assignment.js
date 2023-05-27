@@ -6,6 +6,7 @@ let start = true;
 let w = width - (width % grid_size);
 let h = height - (height % grid_size);
 w = w/7*5;
+w = w - (w % grid_size);
 
 function preload() {
     img = loadImage("flower.png");
@@ -33,8 +34,7 @@ function windowResized(){
     let x = (windowWidth - width_resize) / 2;
     resizeCanvas(w_resize, windowHeight);
     cnv.position(x);
-    resizeCanvas(w_resize, windowHeight)
-    resizeToggle = true
+    resizeToggle = true;
 }
 
 function randomArr() {
