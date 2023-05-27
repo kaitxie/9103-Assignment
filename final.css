@@ -38,6 +38,7 @@ body {
 
 .parallax_container h1 {
   position: absolute;
+  margin: auto;
   top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
