@@ -68,10 +68,46 @@ body {
   border-radius: 1rem;
 }
 
-.details {
+.brief {
   max-width: 800px;
   margin: auto;
-  margin-top: 8rem;
+  margin-top: 6rem;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  text-align: center;
+}
+
+.p1 {
+  max-width: 800px;
+  margin: auto;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  text-align: center;
+}
+
+.p2 {
+  max-width: 800px;
+  margin: auto;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  text-align: center;
+}
+
+.p3 {
+  max-width: 800px;
+  margin: auto;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  text-align: center;
+}
+
+.p4 {
+  max-width: 800px;
+  margin: auto;
+  margin-top: 2rem;
   font-size: 1.2rem;
   line-height: 2rem;
   text-align: center;
