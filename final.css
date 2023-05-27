@@ -19,7 +19,6 @@ body {
 .parallax_container {
   height: 100vh;
   position: relative;
-  margin: auto;
   overflow: hidden;
   background-color: #000000;
 }
@@ -27,7 +26,6 @@ body {
 .parallax_container::after {
   content: "";
   position: absolute;
-  margin: auto;
   bottom: 0;
   height: 5rem;
   width: 100%;
@@ -36,17 +34,16 @@ body {
 
 .parallax_container img {
   position: absolute;
-  margin: auto;
 }
 
 .parallax_container h1 {
   position: absolute;
-  margin: auto;
   top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 100px;
   font-weight: 900;
+  text-align: center;
 }
 
 .about {
