@@ -78,7 +78,7 @@ body {
 }
 
 .p1 {
-  max-width: 800px;
+  max-width: 1200px;
   margin: auto;
   margin-top: 2rem;
   font-size: 1.2rem;
@@ -87,7 +87,7 @@ body {
 }
 
 .p2 {
-  max-width: 800px;
+  max-width: 1200px;
   margin: auto;
   margin-top: 2rem;
   font-size: 1.2rem;
@@ -96,7 +96,7 @@ body {
 }
 
 .p3 {
-  max-width: 800px;
+  max-width: 1200px;
   margin: auto;
   margin-top: 2rem;
   font-size: 1.2rem;
@@ -105,7 +105,7 @@ body {
 }
 
 .p4 {
-  max-width: 800px;
+  max-width: 1200px;
   margin: auto;
   margin-top: 2rem;
   font-size: 1.2rem;
@@ -126,6 +126,7 @@ body {
   border: none;
   padding: 0.75rem 1rem;
   border-radius: 5px;
+  margin-bottom: 6rem;
 }
 
 .explore:hover {
