@@ -37,7 +37,9 @@ function windowResized(){
     let width_resize = windowWidth/7*5;
     let w_resize = width_resize - (width_resize % grid_size);
     let x = (windowWidth - width_resize) / 2;
-    resizeCanvas(w_resize, windowHeight);
+    let height_resize = windowHeight - grid_size*3;
+    let h_resize = height_resize - (height_resize % grid_size);
+    resizeCanvas(w_resize, h_resize);
     cnv.position(x);
     resizeToggle = true;
 }
