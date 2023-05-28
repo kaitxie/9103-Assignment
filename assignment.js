@@ -2,18 +2,21 @@ let col, row, board, img, cnv, song;
 let grid_size = 30;
 let width = window.innerWidth;
 let height = window.innerHeight;
-let start = true;
-let w = width - (width % grid_size);
-let h = height - (height % grid_size);
-w = w/7*5;
+let w = width/7*5;
+let h = height - grid_size*3;
+h = h - (h % grid_size);
 w = w - (w % grid_size);
 
+//Load flower image, background song, and click sound files
 function preload() {
     img = loadImage("flower.png");
     song = loadSound('song.mp3');
     click = loadSound('click.mp3');
 }
 
+//Create canvas
+//When users click on the canvas, the background song will play or stop
+//Put the canvas in the center of the screen horizontally
 function setup() {
     cnv = createCanvas(w, h);
     cnv.mousePressed(function() {
@@ -28,6 +31,8 @@ function setup() {
     randomArr();
 }
 
+//Resize the canvas when the screen size changes
+//Calculate the canvas size and position so it will be in the center of the screen horizontally
 function windowResized(){
     let width_resize = windowWidth/7*5;
     let w_resize = width_resize - (width_resize % grid_size);
@@ -37,6 +42,8 @@ function windowResized(){
     resizeToggle = true;
 }
 
+//Each element in the array will be randomly assigned to 0 or 1
+//1 represents flower and 0 represents fertilizer
 function randomArr() {
     buttonChange();
     col = w / grid_size;
@@ -46,10 +53,11 @@ function randomArr() {
         for (let j = 0; j < row; j++) {
             board[i][j] = Math.floor(Math.random() * 2);;
         }
-    } 
+    }
     img.resize(grid_size-6,grid_size-6);
 }
 
+//Create a 2d array
 function createArr(col,row) {
     let arr = new Array(col);
     for (let i = 0; i < arr.length; i++) {
@@ -58,6 +66,7 @@ function createArr(col,row) {
     return arr;
 }
 
+//Draw flowers and fertilizer on the canvas
 function draw() {
     for (let i = 0; i < col; i++) {
         for (let j = 0; j < row; j++ ) {
@@ -76,6 +85,9 @@ function draw() {
     createNewArr();
 }
 
+//Create new 2d array for the next generation
+//For each element in the array, check its neighbors
+//The element will remain the same or become a flower or become a piece of fertilizer based on the rules
 function createNewArr() {
     let newBoard = createArr(col,row);
     for (let i = 0; i < col; i++) {
@@ -95,6 +107,7 @@ function createNewArr() {
     board = newBoard;
 }
 
+//Count the the number of flowers and pieces of fertilizer in the current element's neighbor
 function countN(board, x, y) {
     let sum = 0;    
     for (let i = -1; i < 2; i++) {
@@ -113,10 +126,14 @@ function countN(board, x, y) {
     return sum;
 }
 
+//Create buttons
+//There are click sounds for all the buttons when users click on it
 const button1 = document.getElementById("button1");
 const button2 = document.getElementById("button2");
 const button3 = document.getElementById("button3");
 
+//The "Start" button will be disabled and become gray
+//The "Stop" button will be abled and retore its color
 function buttonChange() {
     document.getElementById("button2").setAttribute("disabled",true);
     document.getElementById("button2").style.backgroundColor = "gray";
@@ -124,18 +141,26 @@ function buttonChange() {
     document.getElementById("button3").style.backgroundColor = "#4CAF50";
 }
 
+//"Generate" button
+//Generate a new garden with random flowers and pieces of fertilizer
 button1.addEventListener("click", function(e) {
     click.play();
     randomArr();
     loop();
 } );
 
+//"Start" button
+//Start the evolution of successive generations
 button2.addEventListener("click", function(e) {
     click.play();
     loop();
     buttonChange();
 } );
 
+//"Stop" button
+//Stop the evolution of successive generations
+//The "Stop" button will be disabled and become gray
+//The "Start" button will be abled and retore its color
 button3.addEventListener("click", function(e) {
     click.play();
     noLoop();
