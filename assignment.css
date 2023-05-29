@@ -4,6 +4,7 @@ html, body {
 }
 
 .container {  
+ 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     gap: 20px 20px;
@@ -12,9 +13,12 @@ html, body {
       ". . game_name game_name game_name . ."
       ". game_instruction game_instruction game_instruction game_instruction game_instruction ."
       ". . game_button1 game_button2 game_button3 . .";
+     
   }
 
+
   .game_name { 
+    
     grid-area: game_name;
     font-family: Arial, Helvetica, sans-serif;
     width: 100%;
@@ -23,6 +27,8 @@ html, body {
     background-clip: text;
     -webkit-background-clip: text;
     line-height: 44px;
+
+   
  }
   
   .game_button1 { 
@@ -49,9 +55,16 @@ html, body {
     width: 100%;
 }
 
+
 .img-project {
   width: 100%;
   margin-top: 68px;
+}
+
+.newproject{
+  font-size: 12px;
+  width: 50%;
+      margin-left: 60px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -64,9 +77,15 @@ html, body {
         ". ."; 
     }
     .img-project {
-      width: 100%;
-      margin-top: 68px;
+      width: 50%;
+      margin-left: 600px;
+      margin-top: -10px;
   }
+  .img-project2 {
+    width: 5%;
+    margin-left: 100px;
+    margin-top: -200px;
+}
 }
 
   

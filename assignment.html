@@ -33,6 +33,7 @@
     </style>
   </head>
   <body>
+   
     <div class="container">
         <div class="game_button1">
             <button class="button" id="button1">Generate</button>
@@ -47,25 +48,30 @@
             <article class="project">
                 <h2>Project Explanation</h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vel
-                  urna luctus, mollis ante placerat, accumsan metus. Donec lorem ante,
-                  cursus vel lorem consequat, varius mollis eros. Sed ex erat, interdum
-                  ac euismod vitae, molestie id lorem. Proin tempor fermentum leo quis
-                  sollicitudin. Mauris elit ligula, fermentum in enim a, aliquet sodales
-                  odio.
+                  Each of the flowers obeys four simple rules:
                 </p>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vel
-                  urna luctus, mollis ante placerat, accumsan metus. Donec lorem ante,
-                  cursus vel lorem consequat, varius mollis eros. Sed ex erat, interdum
-                  ac euismod vitae, molestie id lorem. Proin tempor fermentum leo quis
-                  sollicitudin. Mauris elit ligula, fermentum in enim a, aliquet sodales
-                  odio.
+                  1. The flower is surrounded by ≥ 3 flowers, the flower will be undernourished and wilt, turning into fertilizer
+                  <br>
+                  2. The flower is surrounded by ≥ 4 pieces of fertilizer, the flower will be over-nourished and wilt into fertilizer
+                  <br>
+                  3. If there are 2 pieces of fertilizer around the fertilizer, the nutrients are sufficient and new flowers grow
+                  <br>
+                  4. If 3 flowers around the fertilizer, which grow into new flowers due to the spread of the flower seeds
                 </p>
+                <p style="color: #57c8f8; font-size: 13px;">
+                  Example
+                </p>
+                <br>
+                <img
+                class="img-project2"
+                src="1.jpg"
+                alt="project-pic"
+                />
                 <p style="color: #f857d8; font-size: 13px;">
                   Tap on the grid to start / stop the background music.
                 </p>
-              </article>
+                
               <img
                 class="img-project"
                 src="instruction.png"
@@ -73,12 +79,25 @@
               />
         </div>
         <div class="game_name">
-            <h1>Project Name</h1>
+            <h1 id="title">Blooming</h1>
         </div>
     </div>
     <script src="assignment.js" ></script>
     <script src="p5.js"></script>
     <script src="p5.sound.js"></script>
+
+    <script>
+      var title = document.getElementById("title");
+
+      document.addEventListener("scroll", (event) => {
+        var positionY = window.scrollY;
+
+        title.style.fontSize = `${80 + positionY * 0.1}px`;
+
+        var _newOpacity = positionY * 0.001;
+      });
+    </script>
+
   </body>
 </html>
 
