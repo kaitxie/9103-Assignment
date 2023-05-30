@@ -48,6 +48,8 @@
         <div class="game_button3">
             <button class="button" id="button3">Stop</button>
         </div>
+
+
         <div class="game_instruction">
             <article class="project">
                 <h2>Project Explanation</h2>
@@ -66,70 +68,77 @@
                 <h2 style="color: #57c8f8; font-size: 13px;">
                   Example
                 </h2>
+                <p style="color: #f857d8; font-size: 13px;">
+                  Try to drag the element to get the answer
+                </p>
+
+                <div class="square">
+                  <div class="png"></div>
+                </div>
 
                 <br>
                 <section class="container2">
+                 
                   <p>1.</p>
                     <div class="square">
                       <div class="png" draggable="true"></div>
+                      <div class="png" draggable="true"></div>
                   </div>
-                  <div class="square">
+                  <p>+</p>
+                  <div class="square" draggable="true">
                     <div class="png" ></div>  
                     <div class="png" ></div>
                 </div>
                 <p>=</p>
                 <div class="box">
-                  <div class="png"></div>
               </div>
               <br>
               <p>2.</p>
-              <div class="box">
-                <div class="png" ></div>  
-               <div class="png" ></div>
+              <div class="square">
+                <div class="png" draggable="true"></div>  
               </div>
-                    <div class="square">
-                      <div class="png" draggable="true"></div>
+              <p>+</p>
+                    <div class="box">
+                      <div class="pngs"  draggable="true" ></div>
+                      <div class="pngs"  draggable="true" ></div>
                   </div>
                   <div class="box">
-                    <div class="png"></div>  
-                   <div class="png" ></div>
+                    <div class="pngs"draggable="true"></div>  
+                   <div class="pngs" draggable="true"></div>
                   </div>
                   <p>=</p>
                  <div class="box">
-                  <div class="png"></div>
                </div>
                 </section>
                 <br><br><br><br><br>
                 <section class="container2">
                 <p>3.</p>
                 <div class="box">
-                  <div class="png" ></div>  
-                 <div class="png" ></div></div>
-                      <div class="square">
-                        <div class="png" draggable="true"></div></div>
+                  <div class="pngs"draggable="true"></div>  
+                 <div class="pngs"draggable="true" ></div></div>
+                 <p>+</p>
+                      <div class="box">
+                        <div class="pngs" draggable="true"></div></div>
+                        
                     <div class="box">
-                      <div class="png"></div>  
-                     <div class="png" ></div></div>
+                      <div class="pngs"  draggable="true"></div>  
+                    </div>
                     <p>=</p>
-                    <div class="box">
-                      <div class="png"></div>
+                    <div class="square">
                    </div>
                  <br>
                  <p>4.</p>
-                <div class="box">
-                  <div class="png" ></div>  
-                 <div class="png" ></div>
+                <div class="square">
+                  <div class="png" draggable="true" ></div>  
+                 <div class="png" draggable="true" ></div>
+                 <div class="png" draggable="true" ></div>
                 </div>
-                      <div class="square">
-                        <div class="png" draggable="true"></div>
-                    </div>
-                    <div class="box">
-                      <div class="png"></div>  
-                     <div class="png" ></div>
+                <p>+</p>
+                      <div class="box">
+                        <div class="pngs"draggable="true" ></div>
                     </div>
                     <p>=</p>
-                    <div class="box">
-                      <div class="png"></div>
+                    <div class="square">
                    </div>
                 </section>
 
@@ -162,14 +171,6 @@
     </div>
    
 
-    <script src="assignment.js" ></script>
-    <script src="p5.js"></script>
-    <script src="p5.sound.js"></script>
-  
-  
-  
-
-
 <script>
   const squares = document.querySelectorAll(".square");
   const pngs = document.querySelector(".png");
@@ -192,9 +193,34 @@
   });
   });
   </script>
+
+<script>
+  const boxes = document.querySelectorAll(".box");
+  const pngss = document.querySelector(".pngs");
+ 
   
-
-
+  boxes.forEach((box)=>{
+  box.addEventListener("dragover",(e)=>{
+      e.preventDefault();
+      box.classList.add("hovered");
+    
+  });
+  
+  box.addEventListener("dragleave",()=>{
+      box.classList.remove("hovered");
+  
+  });
+  
+  box.addEventListener("drop",()=>{
+    box.appendChild(pngss)
+    box.classList.remove("hovered");
+    });
+  });
+  </script>
+  
+  <script src="assignment.js" ></script>
+  <script src="p5.js"></script>
+  <script src="p5.sound.js"></script>
 
   </body>
 </html>
